@@ -1,0 +1,35 @@
+#  -------------------
+#  |  1  |  2  |  3  |
+#  |     | ABC | DEF |
+#  -------------------
+#  |  4  |  5  |  6  |
+#  | GHI | JKL | MNO |
+#  -------------------
+#  |  7  |  8  |  9  |
+#  |PQRS | TUV |WXYZ |
+#  -------------------
+#  |  *  |  0  |  #  |
+#  |     |     |     |
+#  -------------------
+
+
+buttons = {1: "",
+           2: "ABC",
+           3: "DEF",
+           4: "GHI",
+           5: "JKL",
+           6: "MNO",
+           7: "PQRS",
+           8: "TUV",
+           9: "WXYZ",}
+
+def t9_to_clicks(word):
+    word = word.upper()
+    for letter in word:
+        for i in buttons.keys():
+            if letter in buttons[i]:
+                print(str(i) * (buttons[i].index(letter)+1), end="")
+
+
+
+t9_to_clicks("abcdef")
